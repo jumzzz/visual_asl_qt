@@ -9,7 +9,7 @@
 
 **What it cannot do (Yet)**
 
--Interpret different hand gestures.
+- Interpret different hand gestures.
 
 **Current Platform Used**
 - Ubuntu 16.04
