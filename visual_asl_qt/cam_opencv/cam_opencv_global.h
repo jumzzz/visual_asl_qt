@@ -1,0 +1,12 @@
+#ifndef CAM_OPENCV_GLOBAL_H
+#define CAM_OPENCV_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(CAM_OPENCV_LIBRARY)
+#  define CAM_OPENCVSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define CAM_OPENCVSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // CAM_OPENCV_GLOBAL_H

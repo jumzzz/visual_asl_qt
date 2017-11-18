@@ -1,0 +1,48 @@
+#ifndef SKINDETECT_H
+#define SKINDETECT_H
+
+#include "opencv2/core/core.hpp"
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+
+#include <QPixmap>
+
+#include <vector>
+#include <array>
+#include <string>
+#include <map>
+#include <stack>
+#include <queue>
+#include <set>
+#include <algorithm>
+#include <iterator>
+
+class MatConverter
+{
+public:
+    explicit MatConverter();
+    explicit MatConverter(const cv::Mat &img);
+    ~MatConverter();
+   
+    cv::UMat getBGR();
+    cv::UMat getRGB();
+    cv::UMat getHSVFull();
+    cv::UMat getHSV();
+    cv::UMat getLUV();
+    cv::UMat getLab();
+    
+private:
+    
+    cv::UMat m_bgr;
+    cv::UMat m_rgb;
+    cv::UMat m_hsv_full;
+    cv::UMat m_hsv;
+    cv::UMat m_cie_luv;
+    cv::UMat m_cie_lab;
+    
+    void m_cvtColor(const cv::Mat &img);
+    void m_cvtPixMap(const cv::Mat &img);
+    
+};
+
+#endif // SKINDETECT_H

@@ -1,0 +1,27 @@
+#include "mat_converter.h"
+
+MatConverter::MatConverter()
+{
+
+}
+
+MatConverter::MatConverter(const cv::Mat &img)
+{
+    
+}
+
+void MatConverter::m_cvtColor(const cv::Mat &img)
+{
+    cv::cvtColor(img, m_rgb, CV_BGR2RGB);
+    cv::cvtColor(img, m_hsv_full, CV_BGR2HSV_FULL);
+    cv::cvtColor(img, m_hsv, CV_BGR2HSV);
+    cv::cvtColor(img, m_cie_lab, CV_BGR2Luv);
+    cv::cvtColor(img, m_cie_luv, CV_BGR2Lab);
+}
+
+void MatConverter::m_cvtMatQImage(const cv::Mat &img)
+{
+    const uchar* data = const_cast<const uchar*>(img.data);
+    
+    
+}
